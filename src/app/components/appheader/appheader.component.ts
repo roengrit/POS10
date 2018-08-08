@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit,Input  } from '@angular/core';
+ 
 @Component({
   selector: 'app-appheader',
   templateUrl: './appheader.component.html',
@@ -7,14 +7,19 @@ import { Router } from '@angular/router';
 })
 export class AppheaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  @Input() title: string;
+
+  constructor( ) { }
+  public HeaderTxt :string
 
   ngOnInit() {
   }
 
   signOut() {
-    sessionStorage.clear();
-    localStorage.clear();
-    this.router.navigate(['/login'])
+ 
+  }
+
+  setHeader(){
+  
   }
 }
